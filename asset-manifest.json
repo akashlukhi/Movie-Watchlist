@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Movie-Watchlist/static/css/main.61bd6f48.css",
-    "main.js": "/Movie-Watchlist/static/js/main.523ce67a.js",
+    "main.js": "/Movie-Watchlist/static/js/main.4cc58755.js",
     "static/js/14.5f6db19d.chunk.js": "/Movie-Watchlist/static/js/14.5f6db19d.chunk.js",
     "static/js/714.0d4ffdc9.chunk.js": "/Movie-Watchlist/static/js/714.0d4ffdc9.chunk.js",
     "static/js/490.b300c8ea.chunk.js": "/Movie-Watchlist/static/js/490.b300c8ea.chunk.js",
@@ -11,7 +11,7 @@
     "static/js/213.f53f2526.chunk.js": "/Movie-Watchlist/static/js/213.f53f2526.chunk.js",
     "index.html": "/Movie-Watchlist/index.html",
     "main.61bd6f48.css.map": "/Movie-Watchlist/static/css/main.61bd6f48.css.map",
-    "main.523ce67a.js.map": "/Movie-Watchlist/static/js/main.523ce67a.js.map",
+    "main.4cc58755.js.map": "/Movie-Watchlist/static/js/main.4cc58755.js.map",
     "14.5f6db19d.chunk.js.map": "/Movie-Watchlist/static/js/14.5f6db19d.chunk.js.map",
     "714.0d4ffdc9.chunk.js.map": "/Movie-Watchlist/static/js/714.0d4ffdc9.chunk.js.map",
     "490.b300c8ea.chunk.js.map": "/Movie-Watchlist/static/js/490.b300c8ea.chunk.js.map",
@@ -22,6 +22,6 @@
   },
   "entrypoints": [
     "static/css/main.61bd6f48.css",
-    "static/js/main.523ce67a.js"
+    "static/js/main.4cc58755.js"
   ]
 }
