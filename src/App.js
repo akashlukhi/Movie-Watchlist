@@ -22,7 +22,7 @@ function App() {
     return (
         <Provider store={store}>
             <AuthProvider>
-                <Router>
+                <Router basename="/Movie-Watchlist">
                     <Routes>
                         <Route
                             path="/"
