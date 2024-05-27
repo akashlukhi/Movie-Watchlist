@@ -75,8 +75,9 @@ const MovieList = () => {
                     friends.
                 </p>
                 <div className="text-md md:text-xl mt-1">
-                    Just click the <SaveIcon /> to add a movie, the poster to
-                    see more details, and click to mark the movie as watched.
+                    Just click the <SaveIcon coverIcon={true} /> to add a movie,
+                    the poster to see more details, and click to mark the movie
+                    as watched.
                 </div>
             </div>
 
