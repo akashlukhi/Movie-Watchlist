@@ -26,7 +26,7 @@ const PopupContainer = ({ open, onClose, children }) => {
 
     return ReactDOM.createPortal(
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div ref={popUpRef} className="bg-white p-8 rounded-lg">
+            <div ref={popUpRef} className="bg-white p-8 rounded-lg m-5">
                 {children}
             </div>
         </div>,

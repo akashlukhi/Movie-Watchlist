@@ -35,7 +35,7 @@ const Login = () => {
 
     return (
         <div className="w-full h-screen flex justify-center items-center">
-            <div className="max-w-md w-full min-w-fit mx-auto p-6 m-10 bg-white rounded-lg shadow-2xl text-center">
+            <div className="max-w-md w-full min-w-fit mx-5 md:mx-auto p-6 m-10 bg-white rounded-lg shadow-2xl text-center">
                 <h2 className="text-[3rem] font-bold mb-4 text-red-600">
                     WatchList
                 </h2>

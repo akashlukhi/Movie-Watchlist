@@ -111,11 +111,11 @@ const MovieCard = React.memo(({ isWatchList, watchListName, movie }) => {
     }, [dispatch, user, movieId, watchListName]);
 
     return (
-        <div className="w-full md:w-44 h-[395px] rounded-lg overflow-hidden shadow-xl transition-transform hover:scale-105 mb-8 md:mb-0">
+        <div className="w-[85%] max-w-60 md:w-44 h-[395px] rounded-lg overflow-hidden shadow-xl transition-transform hover:scale-105 mb-8 md:mb-0">
             <div className="relative">
                 <img
                     src={poster}
-                    className="bg-cover w-full h-[240px]"
+                    className="bg-cover w-full h-[280px] md:h-[240px]"
                     alt={`${name} movie`}
                 />
                 {isWatchList ? (

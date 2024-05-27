@@ -30,7 +30,7 @@ const EditWatchListPopup = React.memo(
             <PopupContainer open={openPopUp} onClose={closePopUp}>
                 <form onSubmit={handleSubmit}>
                     <h2 className="text-2xl font-semibold mb-4">
-                        Update the Watchlist Name and Description.
+                        Update Watchlist Name and Description.
                     </h2>
                     <div>
                         <input

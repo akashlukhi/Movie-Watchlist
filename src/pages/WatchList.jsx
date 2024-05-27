@@ -81,7 +81,7 @@ const WatchList = () => {
     }
 
     return (
-        <div className="w-full mx-16 mt-8 flex flex-col flex-grow">
+        <div className="w-full mt-16 mx-5 md:mx-16 md:mt-8 flex flex-col flex-grow">
             <div id="watchlist-header">
                 <h2 className="text-[2.5rem] font-semibold flex gap-5 items-center">
                     {watchListName}{" "}
