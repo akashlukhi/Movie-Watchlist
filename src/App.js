@@ -8,9 +8,10 @@ import {
 import { ToastContainer } from "react-toastify";
 import { AuthProvider } from "./context/AuthContext";
 import { Provider } from "react-redux";
-import store from "./store/store";
+import store, { persistor } from "./store/store";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "./components/Loading";
+import { PersistGate } from "redux-persist/integration/react";
 
 const LazyLogin = React.lazy(() => import("./pages/Login"));
 const LazyWatchList = React.lazy(() => import("./pages/WatchList"));
@@ -28,56 +29,58 @@ const LoadingWrapper = () => {
 function App() {
     return (
         <Provider store={store}>
-            <AuthProvider>
-                <Router basename="/Movie-Watchlist">
-                    <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <Suspense fallback={<LoadingWrapper />}>
-                                    <LazySideBar />
-                                </Suspense>
-                            }
-                        >
+            <PersistGate loading={null} persistor={persistor}>
+                <AuthProvider>
+                    <Router basename="/Movie-Watchlist">
+                        <Routes>
                             <Route
-                                index
                                 path="/"
                                 element={
                                     <Suspense fallback={<LoadingWrapper />}>
-                                        <LazyMovieList />
+                                        <LazySideBar />
+                                    </Suspense>
+                                }
+                            >
+                                <Route
+                                    index
+                                    path="/"
+                                    element={
+                                        <Suspense fallback={<LoadingWrapper />}>
+                                            <LazyMovieList />
+                                        </Suspense>
+                                    }
+                                />
+                                <Route
+                                    path="/watchlist/:watchlist"
+                                    element={
+                                        <Suspense fallback={<LoadingWrapper />}>
+                                            <LazyWatchList />
+                                        </Suspense>
+                                    }
+                                />
+                            </Route>
+                            <Route
+                                path="/login"
+                                element={
+                                    <Suspense fallback={<LoadingWrapper />}>
+                                        <LazyLogin />
                                     </Suspense>
                                 }
                             />
                             <Route
-                                path="/watchlist/:watchlist"
+                                path="/register"
                                 element={
                                     <Suspense fallback={<LoadingWrapper />}>
-                                        <LazyWatchList />
+                                        <LazyRegister />
                                     </Suspense>
                                 }
                             />
-                        </Route>
-                        <Route
-                            path="/login"
-                            element={
-                                <Suspense fallback={<LoadingWrapper />}>
-                                    <LazyLogin />
-                                </Suspense>
-                            }
-                        />
-                        <Route
-                            path="/register"
-                            element={
-                                <Suspense fallback={<LoadingWrapper />}>
-                                    <LazyRegister />
-                                </Suspense>
-                            }
-                        />
-                        <Route path="*" element={<Navigate to="/" />} />
-                    </Routes>
-                </Router>
-                <ToastContainer />
-            </AuthProvider>
+                            <Route path="*" element={<Navigate to="/" />} />
+                        </Routes>
+                    </Router>
+                    <ToastContainer />
+                </AuthProvider>
+            </PersistGate>
         </Provider>
     );
 }

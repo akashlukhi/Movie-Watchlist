@@ -41,16 +41,16 @@ const SideBar = () => {
 
     const handleLogout = useCallback(() => {
         toast.info("User Logged out!");
-        toggleSubMenu();
         logout();
-    }, [logout, toggleSubMenu]);
+        navigate("/login");
+    }, [logout, navigate]);
 
     const handleDeleteAccount = useCallback(() => {
         toast.info("User Deleted Successfully!");
-        toggleSubMenu();
         dispatch(deleteUser({ userId: user }));
         logout();
-    }, [dispatch, logout, toggleSubMenu, user]);
+        navigate("/login");
+    }, [dispatch, logout, navigate, user]);
 
     const toggleSidebar = useCallback(() => {
         setIsSidebarOpen((prev) => !prev);
