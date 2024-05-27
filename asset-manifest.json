@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/Movie-Watchlist/static/css/main.a85086e6.css",
-    "main.js": "/Movie-Watchlist/static/js/main.4de29f1d.js",
+    "main.css": "/Movie-Watchlist/static/css/main.99e8f91c.css",
+    "main.js": "/Movie-Watchlist/static/js/main.43510d1c.js",
     "static/js/14.5ab4140f.chunk.js": "/Movie-Watchlist/static/js/14.5ab4140f.chunk.js",
-    "static/js/714.f522511e.chunk.js": "/Movie-Watchlist/static/js/714.f522511e.chunk.js",
+    "static/js/714.87ad2c94.chunk.js": "/Movie-Watchlist/static/js/714.87ad2c94.chunk.js",
     "static/js/490.fae43adb.chunk.js": "/Movie-Watchlist/static/js/490.fae43adb.chunk.js",
     "static/js/768.dcc829ba.chunk.js": "/Movie-Watchlist/static/js/768.dcc829ba.chunk.js",
-    "static/js/144.48c7234e.chunk.js": "/Movie-Watchlist/static/js/144.48c7234e.chunk.js",
+    "static/js/144.ad415bb6.chunk.js": "/Movie-Watchlist/static/js/144.ad415bb6.chunk.js",
     "static/js/453.16bfb2b8.chunk.js": "/Movie-Watchlist/static/js/453.16bfb2b8.chunk.js",
     "static/js/213.f53f2526.chunk.js": "/Movie-Watchlist/static/js/213.f53f2526.chunk.js",
     "static/media/watchlist-logo.png": "/Movie-Watchlist/static/media/watchlist-logo.8610daba7f287debac6b.png",
     "index.html": "/Movie-Watchlist/index.html",
-    "main.a85086e6.css.map": "/Movie-Watchlist/static/css/main.a85086e6.css.map",
-    "main.4de29f1d.js.map": "/Movie-Watchlist/static/js/main.4de29f1d.js.map",
+    "main.99e8f91c.css.map": "/Movie-Watchlist/static/css/main.99e8f91c.css.map",
+    "main.43510d1c.js.map": "/Movie-Watchlist/static/js/main.43510d1c.js.map",
     "14.5ab4140f.chunk.js.map": "/Movie-Watchlist/static/js/14.5ab4140f.chunk.js.map",
-    "714.f522511e.chunk.js.map": "/Movie-Watchlist/static/js/714.f522511e.chunk.js.map",
+    "714.87ad2c94.chunk.js.map": "/Movie-Watchlist/static/js/714.87ad2c94.chunk.js.map",
     "490.fae43adb.chunk.js.map": "/Movie-Watchlist/static/js/490.fae43adb.chunk.js.map",
     "768.dcc829ba.chunk.js.map": "/Movie-Watchlist/static/js/768.dcc829ba.chunk.js.map",
-    "144.48c7234e.chunk.js.map": "/Movie-Watchlist/static/js/144.48c7234e.chunk.js.map",
+    "144.ad415bb6.chunk.js.map": "/Movie-Watchlist/static/js/144.ad415bb6.chunk.js.map",
     "453.16bfb2b8.chunk.js.map": "/Movie-Watchlist/static/js/453.16bfb2b8.chunk.js.map",
     "213.f53f2526.chunk.js.map": "/Movie-Watchlist/static/js/213.f53f2526.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a85086e6.css",
-    "static/js/main.4de29f1d.js"
+    "static/css/main.99e8f91c.css",
+    "static/js/main.43510d1c.js"
   ]
 }
