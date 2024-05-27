@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { deleteUser } from "../store/movieWatchListSlice";
 import { Link, Outlet, useNavigate } from "react-router-dom";
@@ -55,11 +55,19 @@ const SideBar = () => {
         setIsSidebarOpen((prev) => !prev);
     }, []);
 
+    useEffect(() => {
+        if (isSidebarOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }, [isSidebarOpen]);
+
     return (
         <>
             <div className="flex flex-row relative">
                 {/* Mobile Header */}
-                <div className="block md:hidden fixed top-0 left-0 right-0 w-full bg-white shadow-md p-4 flex justify-between items-center z-50">
+                <div className="block md:hidden fixed top-0 left-0 right-0 w-full bg-white shadow-md p-4 flex justify-between items-center z-40">
                     <button onClick={toggleSidebar} className="text-gray-700">
                         <HamburgerIcon />
                     </button>
@@ -68,9 +76,9 @@ const SideBar = () => {
 
                 {/* Sidebar */}
                 <div
-                    className={`fixed md:relative top-0 h-full md:h-screen flex flex-col bg-clip-border bg-white text-gray-700 w-[80%] md:max-w-[19rem] p-4 shadow-xl shadow-blue-gray-900/5 transition-transform duration-300 z-50 ${
+                    className={`fixed md:relative top-0 h-full md:h-screen flex flex-col bg-clip-border bg-white text-gray-700 w-[80%] md:max-w-[19rem] p-4 shadow-xl shadow-blue-gray-900/5 transition-transform duration-300 z-40 ${
                         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-                    } md:translate-x-0`}
+                    } md:translate-x-0 md:overflow-hidden`}
                 >
                     <div className="mb-2 p-4">
                         <h5 className="block font-sans text-5xl text-center font-bold text-red-500">
@@ -193,7 +201,7 @@ const SideBar = () => {
                 {/* Backdrop for mobile sidebar */}
                 {isSidebarOpen && (
                     <div
-                        className="fixed inset-0 bg-black bg-opacity-50 md:hidden z-40"
+                        className="fixed inset-0 bg-black bg-opacity-50 md:hidden z-30"
                         onClick={toggleSidebar}
                     ></div>
                 )}
