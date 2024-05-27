@@ -74,7 +74,7 @@ const MovieList = () => {
                     Browse movies, add them to watchlists, and share them with
                     friends.
                 </p>
-                <div className="text-md md:text-xl flex items-center">
+                <div className="text-md md:text-xl mt-1">
                     Just click the <SaveIcon /> to add a movie, the poster to
                     see more details, and click to mark the movie as watched.
                 </div>

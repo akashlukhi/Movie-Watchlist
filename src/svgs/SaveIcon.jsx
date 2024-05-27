@@ -6,7 +6,7 @@ const SaveIcon = React.memo(({ onClick, isMovieInWatchlist = false }) => {
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 83.02 122.88"
-                className="w-[3rem] h-[3rem] opacity-80"
+                className="w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] opacity-80 inline"
                 onClick={onClick}
             >
                 <style>{`.st0{fillRule:evenodd;clipRule:evenodd;}`}</style>
