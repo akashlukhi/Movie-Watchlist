@@ -12,6 +12,7 @@ import SignOutIcon from "../svgs/SignOutIcon";
 import WatchListicon from "../svgs/WatchListIcon";
 import DeleteIcon from "../svgs/DeleteIcon";
 import SignInIcon from "../svgs/SignInIcon";
+import HamburgerIcon from "../svgs/HamburgerIcon";
 
 const SideBar = () => {
     const { user, isLoggedIn, logout } = useAuth();
@@ -19,6 +20,7 @@ const SideBar = () => {
     const dispatch = useDispatch();
     const [searchQuery, setSearchQuery] = useState("");
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const watchlists = useSelector((state) => state.movies.watchlists[user]);
     const watchlistNames = watchlists?.map((watchlist) => watchlist.name);
@@ -27,6 +29,7 @@ const SideBar = () => {
         (e) => {
             e.preventDefault();
             navigate(`/?search=${searchQuery}`);
+            setIsSidebarOpen(false);
         },
         [navigate, searchQuery]
     );
@@ -48,12 +51,29 @@ const SideBar = () => {
         logout();
     }, [dispatch, logout, toggleSubMenu, user]);
 
+    const toggleSidebar = useCallback(() => {
+        setIsSidebarOpen((prev) => !prev);
+    }, []);
+
     return (
         <>
-            <div className="flex flex-row">
-                <div className="sticky top-0 h-screen flex flex-col bg-clip-border bg-white text-gray-700 w-full max-w-[19rem] p-4 shadow-xl shadow-blue-gray-900/5">
+            <div className="flex flex-row relative">
+                {/* Mobile Header */}
+                <div className="block md:hidden fixed top-0 left-0 right-0 w-full bg-white shadow-md p-4 flex justify-between items-center z-50">
+                    <button onClick={toggleSidebar} className="text-gray-700">
+                        <HamburgerIcon />
+                    </button>
+                    <h5 className="font-bold text-red-500">Watchlists</h5>
+                </div>
+
+                {/* Sidebar */}
+                <div
+                    className={`fixed md:relative top-0 h-full md:h-screen flex flex-col bg-clip-border bg-white text-gray-700 w-[80%] md:max-w-[19rem] p-4 shadow-xl shadow-blue-gray-900/5 transition-transform duration-300 z-50 ${
+                        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+                    } md:translate-x-0`}
+                >
                     <div className="mb-2 p-4">
-                        <h5 className="block font-sans text-5xl text-center font-bold  text-red-500">
+                        <h5 className="block font-sans text-5xl text-center font-bold text-red-500">
                             Watchlists
                         </h5>
                     </div>
@@ -71,7 +91,6 @@ const SideBar = () => {
                                             setSearchQuery(e.target.value)
                                         }
                                     />
-
                                     <div className="absolute left-0 inset-y-0 flex items-center">
                                         <SearchIcon />
                                     </div>
@@ -88,6 +107,7 @@ const SideBar = () => {
                                 role="button"
                                 tabIndex="0"
                                 className="flex items-center w-full p-3 mb-5 mt-9 rounded-md text-start leading-tight transition-all text-white bg-red-500 hover:outline hover:outline-red-800 hover:outline-2"
+                                onClick={toggleSidebar}
                             >
                                 <div className="grid place-items-center mr-4">
                                     <HomeIcon />
@@ -107,6 +127,7 @@ const SideBar = () => {
                                 <Link
                                     to={`watchlist/${watchlist}`}
                                     key={watchlist}
+                                    onClick={toggleSidebar}
                                 >
                                     <div
                                         role="button"
@@ -154,7 +175,10 @@ const SideBar = () => {
                                     ) : (
                                         <button
                                             className="flex gap-2 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                            onClick={() => navigate("/login")}
+                                            onClick={() => {
+                                                navigate("/login");
+                                                toggleSidebar();
+                                            }}
                                         >
                                             <SignInIcon />
                                             Login
@@ -165,6 +189,15 @@ const SideBar = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Backdrop for mobile sidebar */}
+                {isSidebarOpen && (
+                    <div
+                        className="fixed inset-0 bg-black bg-opacity-50 md:hidden z-40"
+                        onClick={toggleSidebar}
+                    ></div>
+                )}
+
                 <Outlet />
             </div>
         </>

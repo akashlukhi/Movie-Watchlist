@@ -18,6 +18,13 @@ const LazyRegister = React.lazy(() => import("./pages/Register"));
 const LazySideBar = React.lazy(() => import("./components/SideBar"));
 const LazyMovieList = React.lazy(() => import("./pages/MovieList"));
 
+const LoadingWrapper = () => {
+    return (
+        <div className="flex justify-center items-start h-screen">
+            <Loading />
+        </div>
+    );
+};
 function App() {
     return (
         <Provider store={store}>
@@ -27,7 +34,7 @@ function App() {
                         <Route
                             path="/"
                             element={
-                                <Suspense fallback={<Loading />}>
+                                <Suspense fallback={<LoadingWrapper />}>
                                     <LazySideBar />
                                 </Suspense>
                             }
@@ -36,7 +43,7 @@ function App() {
                                 index
                                 path="/"
                                 element={
-                                    <Suspense fallback={<Loading />}>
+                                    <Suspense fallback={<LoadingWrapper />}>
                                         <LazyMovieList />
                                     </Suspense>
                                 }
@@ -44,7 +51,7 @@ function App() {
                             <Route
                                 path="/watchlist/:watchlist"
                                 element={
-                                    <Suspense fallback={<Loading />}>
+                                    <Suspense fallback={<LoadingWrapper />}>
                                         <LazyWatchList />
                                     </Suspense>
                                 }
@@ -53,7 +60,7 @@ function App() {
                         <Route
                             path="/login"
                             element={
-                                <Suspense fallback={<Loading />}>
+                                <Suspense fallback={<LoadingWrapper />}>
                                     <LazyLogin />
                                 </Suspense>
                             }
@@ -61,7 +68,7 @@ function App() {
                         <Route
                             path="/register"
                             element={
-                                <Suspense fallback={<Loading />}>
+                                <Suspense fallback={<LoadingWrapper />}>
                                     <LazyRegister />
                                 </Suspense>
                             }
