@@ -21,7 +21,7 @@ const LazyMovieList = React.lazy(() => import("./pages/MovieList"));
 
 const LoadingWrapper = () => {
     return (
-        <div className="flex justify-center items-start h-screen">
+        <div className="flex justify-center items-start h-screen w-screen">
             <Loading />
         </div>
     );
