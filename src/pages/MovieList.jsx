@@ -61,23 +61,23 @@ const MovieList = () => {
     };
 
     return (
-        <div className="w-full mx-16 mt-8 flex flex-col flex-grow">
+        <div className="w-full mx-5 md:mx-16 mt-20 md:mt-8 flex flex-col flex-grow">
             <div
                 id="cover-card"
                 className="flex flex-col border-4 border-red-700 p-6 w-full rounded-md"
             >
-                <h1 className="text-5xl">
+                <h1 className="text-2xl md:text-5xl">
                     Welcome to <span className="text-red-600">Watchlists</span>
                 </h1>
                 <br />
-                <p className="text-xl py-2">
+                <p className="text-md md:text-xl md:py-2">
                     Browse movies, add them to watchlists, and share them with
                     friends.
                 </p>
-                <span className="text-xl flex items-center">
+                <div className="text-md md:text-xl flex items-center">
                     Just click the <SaveIcon /> to add a movie, the poster to
                     see more details, and click to mark the movie as watched.
-                </span>
+                </div>
             </div>
 
             <MovieSearch

@@ -13,6 +13,7 @@ import WatchListicon from "../svgs/WatchListIcon";
 import DeleteIcon from "../svgs/DeleteIcon";
 import SignInIcon from "../svgs/SignInIcon";
 import HamburgerIcon from "../svgs/HamburgerIcon";
+import WatchlistImage from "../public/watchlist-logo.png";
 
 const SideBar = () => {
     const { user, isLoggedIn, logout } = useAuth();
@@ -67,16 +68,22 @@ const SideBar = () => {
         <>
             <div className="flex flex-row relative">
                 {/* Mobile Header */}
-                <div className="block md:hidden fixed top-0 left-0 right-0 w-full bg-white shadow-md p-4 flex justify-between items-center z-40">
+                <div className="md:hidden fixed top-0 left-0 right-0 w-full bg-white shadow-md p-4 flex justify-between items-center z-40">
                     <button onClick={toggleSidebar} className="text-gray-700">
                         <HamburgerIcon />
                     </button>
-                    <h5 className="font-bold text-red-500">Watchlists</h5>
+                    <h5 className="font-bold text-red-500">
+                        <img
+                            src={WatchlistImage}
+                            className="h-8 w-8"
+                            alt="movie-logo"
+                        ></img>
+                    </h5>
                 </div>
 
                 {/* Sidebar */}
                 <div
-                    className={`fixed md:relative top-0 h-full md:h-screen flex flex-col bg-clip-border bg-white text-gray-700 w-[80%] md:max-w-[19rem] p-4 shadow-xl shadow-blue-gray-900/5 transition-transform duration-300 z-40 ${
+                    className={`fixed md:sticky top-0 h-full md:h-screen flex flex-col bg-clip-border bg-white text-gray-700 w-[80%] md:max-w-[19rem] p-4 shadow-xl shadow-blue-gray-900/5 transition-transform duration-300 z-40 ${
                         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                     } md:translate-x-0 md:overflow-hidden`}
                 >
