@@ -37,10 +37,10 @@ const Register = () => {
     return (
         <div className="w-full h-screen flex justify-center items-center">
             <div className="max-w-md w-full min-w-fit mx-5 md:mx-auto p-6 m-10 bg-white rounded-lg shadow-2xl text-center">
-                <h2 className="text-3xl font-bold mb-4 text-red-600">
+                <h2 className="text-[3rem] font-bold mb-4 text-red-600">
                     WatchList
                 </h2>
-                <h2 className="text-2xl font-semibold mb-4">Sign Up</h2>
+                <h2 className="text-[2rem] font-semibold mb-4">Sign Up</h2>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="email"
@@ -52,7 +52,8 @@ const Register = () => {
                     />
                     <button
                         type="submit"
-                        className="w-full bg-red-500 hover:bg-red-700 text-white py-2 rounded-lg"
+                        disabled={!email}
+                        className="w-full bg-red-500 disabled:hover:bg-red-400 disabled:bg-red-400 hover:bg-red-700 text-white py-2 rounded-lg"
                     >
                         Register User
                     </button>
